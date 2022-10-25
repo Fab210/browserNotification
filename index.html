@@ -21,6 +21,7 @@
             var title = blogs[x][0];
             var desc = 'Most popular blogs.';
             var url = blogs[x][1];
+            const song = "tone-deep-voice-look-at-me.mp3";
             notifyBrowser(title, desc, url);
         }, 200000);
         document.addEventListener('DOMContentLoaded', function() {
@@ -52,6 +53,7 @@
                     icon: 'http://www.freelogovectors.net/wp-content/uploads/2015/06/gold-fish-icon.png',
                     body: desc,
                 });
+                 new Audio(song).play();
             }
         }
         notification.onclick = function() {
