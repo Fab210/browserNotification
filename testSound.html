@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -8,51 +7,50 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-
-const buttonEl = document.querySelector("button");
-
-const title = "Success";
-const msg = "Message";
-const icon = "https://via.placeholder.com/50x50";
-const song = "notification.mp3";
-
-buttonEl.addEventListener("click", notifyMe);
-
-function notifyMe() {
-  if (!("Notification" in window)) {
-    alert("This browser does not support Desktop notifications");
-  }
-  if (Notification.permission === "granted") {
-    callNotify(title, msg, icon);
-    return;
-  }
-  if (Notification.permission !== "denied") {
-    Notification.requestPermission((permission) => {
-      if (permission === "granted") {
-        callNotify(title, msg, icon);
-      }
-    });
-    return;
-  }
-}
-
-function callNotify(title, msg, icone) {
-  new Notification(title, { body: msg, icon: icone });
-  new Audio(song).play();
-}
-  </script>
-  </head>
+   
+</head>
 
 <body>
     <div id="container">
-        <h1 Browser notification demo with SOUND</h1>
+        <h1> Browser notification demo with SOUND</h1>
 
         <h4>Generate Notification with tap on Notification</h4>
         <button>Click here</button>
     </div>
+    <script type="text/javascript">
+
+        const buttonEl = document.querySelector("button");
+
+        const title = "Success";
+        const msg = "Message";
+        const icon = "https://via.placeholder.com/50x50";
+        const song = "tone-deep-voice-look-at-me.mp3";
+
+        buttonEl.addEventListener("click", notifyMe);
+
+        function notifyMe() {
+            if (!("Notification" in window)) {
+                alert("This browser does not support Desktop notifications");
+            }
+            if (Notification.permission === "granted") {
+                callNotify(title, msg, icon);
+                return;
+            }
+            if (Notification.permission !== "denied") {
+                Notification.requestPermission((permission) => {
+                    if (permission === "granted") {
+                        callNotify(title, msg, icon);
+                    }
+                });
+                return;
+            }
+        }
+
+        function callNotify(title, msg, icone) {
+            new Notification(title, { body: msg, icon: icone });
+            new Audio(song).play();
+        }
+    </script>
 </body>
 
 </html>
-
-
